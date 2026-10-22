@@ -25,8 +25,9 @@ public class UserController {
         userservices.createUser(user);
     }
 
-    @DeleteMapping
-    public void deleteUser(@RequestBody User user) {
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        User user = userservices.getUserById(id);
         userservices.DeleteUser(user);
     }
 
